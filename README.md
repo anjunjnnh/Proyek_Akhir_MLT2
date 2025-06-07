@@ -2,7 +2,7 @@
 ## Domain Proyek
 Domain yang dipilih untuk proyek *machine learning* ini adalah **Hiburan (Entertainment)**, dengan judul **K-Drama Recommendation System using Content-Based Filtering.**
 
-### Latar Belakang
+## Latar Belakang
 
 ![image hospital playlist](https://img.merahputih.com/media/f2/c1/9c/f2c19cad0fa1dfaa49c3e2733f6ec503.jpeg)
 
@@ -12,21 +12,21 @@ Masalah ini dapat diselesaikan dengan mengembangkan sistem rekomendasi yang mema
 
 Penggunaan Content-Based Filtering dalam sistem rekomendasi K-Drama telah terbukti efektif dalam penelitian sebelumnya. Misalnya, beberapa studi menunjukkan bahwa pendekatan berbasis konten dapat mencapai performa yang baik dalam memprediksi preferensi pengguna dan menghasilkan rekomendasi yang akurat [[2]](https://journals.indexcopernicus.com/api/file/viewByFileId/1481563). Dengan mengimplementasikan sistem ini, pengguna dapat menghemat waktu dan tenaga dalam pencarian K-Drama, meningkatkan kepuasan mereka dalam menonton, dan pada akhirnya, memperkaya pengalaman mereka dalam menikmati konten hiburan dari Korea Selatan.
 
-### Business Understanding
+## Business Understanding
 Industri hiburan menghadapi tantangan dalam membantu pengguna menemukan konten yang relevan di tengah banyaknya pilihan. Proses pencarian manual seringkali sulit dan memakan waktu, berdampak pada kepuasan dan retensi pengguna. Proyek ini bertujuan menyediakan sistem rekomendasi berbasis konten yang dapat diandalkan untuk merekomendasikan K-Drama secara personal, meningkatkan pengalaman pengguna, mendorong engagement, dan meningkatkan retensi di platform hiburan.
 
-### Problem Statements
+## Problem Statements
 Berdasarkan latar belakang di atas, berikut ini merupakan rincian masalah yang dapat diselesaikan pada proyek ini:
-- Bagaimana membangun sistem rekomendasi berbasis konten yang efektif untuk K-Drama menggunakan fitur genre dan teknik seperti TF-IDF Vectorization dan Cosine Similarity?
+- Bagaimana membangun sistem rekomendasi berbasis konten yang efektif untuk K-Drama menggunakan fitur genre dan teknik Count Vectorization dan Cosine Similarity?
 - Bagaimana cara mengukur kesamaan antar K-Drama berdasarkan fitur konten genre dan menggunakan kesamaan tersebut untuk menghasilkan rekomendasi?
 - Bagaimana sistem dapat menangani input dari pengguna (nama K-Drama) dan memberikan daftar rekomendasi K-Drama yang relevan berdasarkan kemiripan genre?
 
-### Goals
-- Untuk membangun sistem rekomendasi K-Drama berbasis konten menggunakan fitur genre dan metode seperti TF-IDF Vectorizer dan Cosine Similarity.
+## Goals
+- Untuk membangun sistem rekomendasi K-Drama berbasis konten menggunakan fitur genre dan metode seperti Count Vectorizer dan Cosine Similarity.
 - Untuk menghasilkan rekomendasi K-Drama yang relevan bagi pengguna berdasarkan kemiripan genre.
 - Untuk menyediakan antarmuka yang memungkinkan pengguna untuk memasukkan nama K-Drama dan menerima daftar rekomendasi yang disarankan berdasarkan genre.
 
-### Solution Statement
+## Solution Statement
 Proyek ini mengusulkan solusi berbasis machine learning untuk mengatasi tantangan penemuan konten dalam industri hiburan, dengan fokus pada K-Drama. Solusi ini melibatkan pembangunan sistem rekomendasi berbasis konten yang berfokus pada fitur genre. Data K-Drama akan melalui proses persiapan untuk memilih fitur genre yang relevan. Kemudian, CountVectorizer akan digunakan untuk mengubah data genre menjadi representasi numerik dalam bentuk matriks. Cosine Similarity akan dihitung antar K-Drama berdasarkan matriks ini untuk mengukur tingkat kemiripan genre. Sistem akan mengambil input nama K-Drama dari pengguna, menemukan K-Drama yang paling mirip berdasarkan genre, dan mengurutkan K-Drama lain berdasarkan skor kesamaan genre untuk menghasilkan daftar rekomendasi. Solusi ini bertujuan untuk memberikan pengguna alat yang efektif untuk menemukan K-Drama baru yang sesuai dengan selera mereka berdasarkan genre yang mereka sukai.
 
 ## Data Understanding
