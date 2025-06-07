@@ -81,11 +81,11 @@ Tabel 2. Deskripsi Statistik Data Kategorikal
 |   top  |   Move to Heaven  | May 22, 2017 - Jul 11, 2017 |	  tvN        |  Wednesday, Thursday | 1 hr. 10 min. |	15+ - Teens 15 or older | Geu Roo is a young autistic man. He works for ... |	Psychological, Comedy, Romance, Drama | Autism, Uncle-Nephew Relationship, Death, Sava... |  Kim Won Suk   |  Kim Eun Hee  | Jo Jung Suk, Yoo Yeon Seok, Jung Kyung Ho, Kim...	|   Chorokbaem Media   |	  #1   |
 |  freq  |	     1        |	          2             |	   49        |          40          |	     56     |	         216            |	                        1                     |	                   4                  |	                      1                           |	    5	  |       6       |	                      2                           |	       7          |	   1   |
      
-## b. EDA : Univariate Analysis
+### b. EDA : Univariate Analysis
 
 Pada tahap ini, dilakukan analisis terhadap distribusi dan karakteristik masing-masing fitur dalam dataset.
 
-### Data Numerikal
+#### Data Numerikal
 <p align="center">
   <img src="https://github.com/user-attachments/assets/89444593-b044-4562-ac68-d22dd097c092" alt="Gambar 1" width="500"/>
   <br/>
@@ -107,7 +107,7 @@ Histogram rating menunjukkan bahwa distribusi rating cenderung terkonsentrasi pa
 </p>
 Menunjukkan tren rilis K-Drama dalam "Top 250" dari tahun ke tahun. Kenaikan dalam beberapa tahun terakhir dapat mengindikasikan pertumbuhan industri atau preferensi penonton pada rilis terbaru.
 
-### Data Kategorikal
+#### Data Kategorikal
 <p align="center">
   <img src="https://github.com/user-attachments/assets/9eb402cb-bb08-4b35-962f-8759480bf6fa" alt="Gambar 4" width="500"/>
   <br/>
@@ -152,9 +152,9 @@ Tahap Data Preparation merupakan fondasi penting untuk memastikan data siap digu
 Hasil dari tahapan Data Preparation adalah dataset yang lebih bersih, terfokus pada fitur relevan (terutama genre), dan siap untuk digunakan dalam membangun dan mengevaluasi model rekomendasi berbasis kesamaan konten.
 
 
-## 3. Modelling
+## Modeling Process and Recommendation Results
 
-Pada tahap Modelling, fokus utama adalah membangun arsitektur sistem rekomendasi yang dapat menyarankan K-Drama baru berdasarkan preferensi pengguna. Mengingat problem statement yang berfokus pada rekomendasi berbasis konten menggunakan fitur genre, pendekatan yang dipilih adalah **Content-Based Filtering**.
+Pada tahap ini, fokus utama adalah membangun arsitektur sistem rekomendasi yang dapat menyarankan K-Drama baru berdasarkan preferensi pengguna. Mengingat problem statement yang berfokus pada rekomendasi berbasis konten menggunakan fitur genre, pendekatan yang dipilih adalah **Content-Based Filtering**.
 
 Teknik utama yang digunakan adalah menghitung **kemiripan antar item (K-Drama) berdasarkan representasi numerik dari genre**. Langkah-langkahnya adalah sebagai berikut:
 
@@ -163,33 +163,52 @@ Teknik utama yang digunakan adalah menghitung **kemiripan antar item (K-Drama) b
 
 2.  **Perhitungan Kemiripan dengan Cosine Similarity:** <br>
     Untuk mengukur seberapa mirip setiap pasangan K-Drama berdasarkan vektor genrenya, digunakan metrik **Cosine Similarity**.
-    *   **Formula Cosine Similarity:** Cosine Similarity antara dua vektor A dan B dihitung sebagai berikut:
+    *   **Formula Cosine Similarity:** 
         ![formula cosine similarity](https://github.com/user-attachments/assets/f5a4b698-92cf-42e8-be59-34f95e07e1ae)
     *   **Cara Kerja Metrik:** Metrik ini mengukur kosinus dari sudut antara dua vektor. Nilai yang mendekati 1 menunjukkan sudut kecil (vektor sangat mirip arahnya, yang berarti genre-nya serupa), sedangkan nilai yang mendekati 0 menunjukkan sudut mendekati 90 derajat (tidak ada kemiripan genre). <br>
 
 Tabel 3. Nilai *Cosine Similarity* antar 5 Judul K-Drama
 
-| Name                          | Thriller, Mystery, Psychological | Thriller, Mystery, Drama, Political | Comedy, Romance, Youth, Sports | Historical, Romance, Supernatural, Political | Action, Thriller, Drama, Fantasy | Thriller, Mystery, Drama, Melodrama  | Mystery, Comedy, Law, Romance | Thriller, Comedy, Law, Romance | Action, Thriller, Mystery, Drama  | Romance, Life, Drama, Fantasy|
-| :--------------------------:  | :------------------------------: | :---------------------------------: | :----------------------------: | :------------------------------------------: | :------------------------------: | :----------------------------------: | :---------------------------: | :----------------------------: | :-------------------------------: | :--------------------------: |
-| **Hospital Playlist**         | 0.000000                         | 0.000000                            | 0.250000                       | 0.250000                                     | 0.000000                         | 0.000000                             | 0.250000                      | 0.250000                       | 0.000000                          | 0.500000                     |
-| **Kairos**                    | 0.288675                         | 0.500000                            | 0.000000                       | 0.000000                                     | 0.750000                         | 0.500000                             | 0.000000                      | 0.250000                       | 0.750000                          | 0.250000                     |
-| **Age of Youth 2**            | 0.288675                         | 0.250000                            | 0.500000                       | 0.250000                                     | 0.000000                         | 0.250000                             | 0.750000                      | 0.500000                       | 0.250000                          | 0.500000                     |
-| **Strong Woman Do Bong Soon** | 0.235702                         | 0.408248                            | 0.408248                       | 0.408248                                     | 0.612372                         | 0.408248                             | 0.408248                      | 0.612372                       | 0.612372                          | 0.408248                     |
-| **Hello Monster**             | 0.866025                         | 0.750000                            | 0.000000                       | 0.000000                                     | 0.500000                         | 0.750000                             | 0.250000                      | 0.250000                       | 0.750000                          | 0.250000                     |
+| Name                    | Historical, Romance, Drama, Political | Friendship, Comedy, Youth, Sports | Action, Thriller, Drama, SciFi | Thriller, Mystery, SciFi | Mystery, Comedy, Romance, Life | Adventure, Historical, Romance, Drama | Life, Drama, Melodrama | Historical, Romance, Melodrama, Political | Mystery, Psychological, Drama, Family | Thriller, Romance, Drama, Melodrama |
+| ----------------------- | ------------------------------------- | --------------------------------- | ------------------------------ | ------------------------ | ------------------------------ | ------------------------------------- | ---------------------- | ----------------------------------------- | ------------------------------------- | ----------------------------------- |
+| Designated Survivor     | 0.50                                  | 0.00                              | 0.50000                        | 0.577350                 | 0.25                           | 0.25                                  | 0.288675               | 0.25                                      | 0.50                                  | 0.500000                            |
+| Itaewon Class           | 0.50                                  | 0.00                              | 0.25000                        | 0.000000                 | 0.50                           | 0.50                                  | 0.577350               | 0.25                                      | 0.25                                  | 0.500000                            |
+| Empress Ki              | 0.75                                  | 0.00                              | 0.00000                        | 0.000000                 | 0.25                           | 0.50                                  | 0.288675               | 1.00                                      | 0.00                                  | 0.500000                            |
+| Big Mouth               | 0.25                                  | 0.00                              | 0.50000                        | 0.577350                 | 0.25                           | 0.25                                  | 0.288675               | 0.00                                      | 0.50                                  | 0.500000                            |
+| My Name                 | 0.00                                  | 0.00                              | 0.57735                        | 0.333333                 | 0.00                           | 0.00                                  | 0.000000               | 0.00                                      | 0.00                                  | 0.288675                            |
 
 3.  **Pembuatan Fungsi Rekomendasi (Top-N Recommendation):** <br>
     Sebuah fungsi `get_recommendations` dirancang untuk memberikan rekomendasi **Top-N**, di mana N dalam kasus ini adalah 10.
     *   Fungsi ini mengambil judul K-Drama yang disukai pengguna sebagai input.
     *   Berdasarkan matriks Cosine Similarity, fungsi menemukan 10 K-Drama lain yang memiliki skor kemiripan genre tertinggi dengan K-Drama input.
-    *   Output dari fungsi ini adalah daftar **Top 10 rekomendasi K-Drama**, termasuk nama, tahun rilis, dan genre dari K-Drama yang direkomendasikan.
+    *   Output dari fungsi ini adalah daftar **Top 10 K-Drama**, termasuk nama, tahun rilis, dan genre dari K-Drama yang direkomendasikan.
 
-**Kelebihan Pendekatan Content-Based Filtering (dengan CountVectorizer & Cosine Similarity):**
+Tabel 4. Contoh Judul K-Drama yang Menjadi Objek Uji
+|       | Name                  | Year of Release | Genre                              |
+| ----- | --------------------- | --------------- | ---------------------------------- |
+|   2   | **Hospital Playlist** | 2020            | Friendship, Romance, Life, Medical |
+
+Tabel 5. Top 10 K-Drama Berdasarkan Kemiripan Fitur Genre (‘Hospital Playlist’)
+|       | Name                                | Year of Release | Genre                                |
+| ----- | ----------------------------------- | --------------- | -------------------------------------|
+|   0   | Hospital Playlist 2                 | 2021            | Friendship, Romance, Life, Medical   |
+|   1   | Age of Youth                        | 2016            | Friendship, Romance, Life, Youth     |
+|   2   | Doctor John                         | 2019            | Mystery, Romance, Life, Medical      |
+|   3   | If You Wish Upon Me                 | 2022            | Romance, Life, Drama, Medical        |
+|   4   | Good Doctor                         | 2013            | Romance, Life, Drama, Medical        |
+|   5   | Hometown Cha-Cha-Cha                | 2021            | Comedy, Romance, Life                |
+|   6   | Dr. Romantic                        | 2016            | Romance, Drama, Medical              |
+|   7   | Yumi's Cells 2                      | 2022            | Comedy, Romance, Life                |
+|   8   | At a Distance, Spring Is Green      | 2021            | Romance, Life, Youth                 |
+|   9   | D-Day                               | 2015            | Romance, Drama, Medical              |
+
+### Kelebihan Pendekatan Content-Based Filtering (dengan CountVectorizer & Cosine Similarity)
 
 *   **Tidak Membutuhkan Data Pengguna Lain:** Model hanya bergantung pada informasi konten (genre) dari item itu sendiri, sehingga bisa langsung memberikan rekomendasi bahkan untuk item baru atau pengguna baru (cold-start problem untuk item).
 *   **Dapat Menjelaskan Rekomendasi:** Mudah untuk menjelaskan mengapa suatu item direkomendasikan (karena kemiripan genre).
 *   **Menangkap Preferensi Spesifik Pengguna:** Jika sistem diperluas untuk pengguna individu, model dapat menyesuaikan rekomendasi berdasarkan riwayat interaksi pengguna dengan konten tertentu.
 
-**Kekurangan Pendekatan Content-Based Filtering:**
+### Kekurangan Pendekatan Content-Based Filtering
 
 *   **Keterbatasan pada Konten yang Disediakan:** Model hanya bisa merekomendasikan item yang mirip dengan item yang sudah disukai. Sulit untuk merekomendasikan item di luar "gelembung" konten yang familiar.
 *   **Masalah Overspecialization:** Pengguna mungkin hanya akan direkomendasikan item yang sangat mirip, membatasi penemuan konten baru atau beragam.
@@ -205,8 +224,8 @@ Tahap Evaluation dilakukan untuk mengukur efektivitas sistem rekomendasi dalam m
 
 Metrik evaluasi yang digunakan dalam konteks ini adalah **Precision**.
 
-*   **Formula Precision:** Precision dihitung sebagai:
-    $$ \text{Precision} = \frac{\text{Jumlah Rekomendasi yang Relevan}}{\text{Total Jumlah Rekomendasi}} = \frac{\text{TP}}{\text{TP + FP}} $$
+*   **Formula Precision:** 
+   ![image](https://github.com/user-attachments/assets/b7b25458-93f3-46b2-9743-10f970631929)
     Di mana:
     *   **TP (True Positives):** Jumlah item yang direkomendasikan dan sebenarnya relevan (dalam konteks ini, memiliki genre yang sangat mirip dengan K-Drama input).
     *   **FP (False Positives):** Jumlah item yang direkomendasikan tetapi sebenarnya tidak relevan.
@@ -217,12 +236,22 @@ Metrik evaluasi yang digunakan dalam konteks ini adalah **Precision**.
 
 Model rekomendasi diuji dengan memberikan input K-Drama "Hospital Playlist". Sistem memberikan daftar **Top 10 rekomendasi**. Berdasarkan analisis kualitatif terhadap genre dari 10 K-Drama yang direkomendasikan, diasumsikan bahwa semua rekomendasi tersebut memiliki kemiripan genre yang tinggi dengan "Hospital Playlist".
 
-Dengan asumsi ini (TP = 10, FP = 0 untuk 10 rekomendasi teratas), perhitungan Precision adalah:
-$$ \text{Precision} = \frac{10}{10 + 0} = 1.0 $$
-$$ \text{Precision} = 100\% $$
+Dengan perhitungan berikut : <br>
+![Screenshot 2025-06-07 201927](https://github.com/user-attachments/assets/6abf2a53-21fd-41c7-8ba8-18d66ae8a71c)
+
 
 **Kesimpulan Hasil Evaluasi:**
 
-Hasil perhitungan Precision sebesar 100% menunjukkan bahwa, **berdasarkan asumsi evaluasi bahwa rekomendasi dengan genre yang mirip dianggap relevan**, model ini sangat efektif dalam menghasilkan daftar 10 K-Drama teratas yang memiliki kesamaan genre dengan K-Drama input. Ini mengindikasikan bahwa pendekatan Content-Based Filtering berbasis CountVectorizer dan Cosine Similarity bekerja dengan baik dalam menangkap dan memanfaatkan informasi genre untuk rekomendasi.
+Hasil perhitungan Precision sebesar 100% menunjukkan bahwa, **berdasarkan perhitungan evaluasi bahwa rekomendasi dengan genre yang mirip dianggap relevan**, model ini sangat efektif dalam menghasilkan daftar 10 K-Drama teratas yang memiliki kesamaan genre dengan K-Drama input. Ini mengindikasikan bahwa pendekatan Content-Based Filtering berbasis CountVectorizer dan Cosine Similarity bekerja dengan baik dalam menangkap dan memanfaatkan informasi genre untuk rekomendasi.
 
 Penting untuk diingat bahwa evaluasi ini menggunakan asumsi sederhana tentang relevansi berdasarkan genre. Evaluasi yang lebih robust mungkin melibatkan perbandingan dengan penilaian manual atau data preferensi pengguna yang sebenarnya jika tersedia.
+
+## Referensi 
+
+1. Lee, Y. J., & Park, J. H. (2024). *How You Like That? Development of a Korean Drama Recommendation System Through Sentiment Analysis*. ResearchGate. [https://www.researchgate.net/publication/379107215_How_You_Like_That_Development_of_a_Korean_Drama_Recommendation_System_Through_Sentiment_Analysis](https://www.researchgate.net/publication/379107215_How_You_Like_That_Development_of_a_Korean_Drama_Recommendation_System_Through_Sentiment_Analysis)
+
+2. Patil, K. R., & Bhatlawande, K. D. (2023). *Movie Recommendation System Using Sentiment Analysis from Reviews*. *International Journal of Advanced Research in Computer Science*. [https://journals.indexcopernicus.com/api/file/viewByFileId/1481563](https://journals.indexcopernicus.com/api/file/viewByFileId/1481563)
+
+3. Ramoliya, K. (2023, October 10). *What is Cosine Similarity and how is it useful for text embeddings?* Medium. [https://medium.com/@KeyurRamoliya/what-is-cosine-similarity-and-how-is-it-useful-for-text-embeddings-7c47c65ef08d](https://medium.com/@KeyurRamoliya/what-is-cosine-similarity-and-how-is-it-useful-for-text-embeddings-7c47c65ef08d)
+
+4. Encord. (2023, November 20). *Classification Metrics: Accuracy, Precision, Recall*. Encord Blog. [https://encord-com.translate.goog/blog/classification-metrics-accuracy-precision-recall/?_x_tr_sl=en&_x_tr_tl=id&_x_tr_hl=id&_x_tr_pto=imgs](https://encord-com.translate.goog/blog/classification-metrics-accuracy-precision-recall/?_x_tr_sl=en&_x_tr_tl=id&_x_tr_hl=id&_x_tr_pto=imgs)
