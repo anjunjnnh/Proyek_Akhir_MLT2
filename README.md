@@ -64,48 +64,165 @@ Tabel 1. Deskripsi Statistik Data Numerikal
 |       | Year of release | Number of Episodes |   Rating   |
 | :---: | :-------------: | :---------------:  | :--------: |
 | count |    250.00000    |     250.000000     | 250.000000 |
-| mean	|   2018.25600	  |      19.064000	   |   8.534000 |
-|  std	|      3.26452	  |      13.245743	   |   0.221359 |
-|  min  |	  2003.00000    |	      1.000000	   |   8.300000 |
-|  25%	|   2017.00000	  |      16.000000	   |   8.300000 |
-|  50%  |	  2019.00000	  |      16.000000	   |   8.500000 |
-|  75%	|   2021.00000	  |      20.000000	   |   8.700000 |
-|  max  |	  2022.00000	  |     133.000000	   |   9.200000 |
+|  mean |   2018.25600	 |      19.064000	  |   8.534000 |
+|  std  |      3.26452	 |      13.245743	  |   0.221359 |
+|  min  |	  2003.00000    |	    1.000000	  |   8.300000 |
+|  25%  |   2017.00000	 |      16.000000	  |   8.300000 |
+|  50%  |	  2019.00000	 |      16.000000	  |   8.500000 |
+|  75%  |   2021.00000	 |      20.000000	  |   8.700000 |
+|  max  |	  2022.00000	 |     133.000000	  |   9.200000 |
 
 Tabel 2. Deskripsi Statistik Data Kategorikal
 
-|        |      Name	    |           Aired Date        | Original Network |	     Aired On	      |    Duration  	|      Content Rating     |	                     Synopsis                     |	                 Genre                |	                     Tags                         |	  Director  |	Screenwriter |	                     Cast                         | Production companies |	 Rank  |
-|  :---: |   :----------: |  :------------------------: | :--------------: | :------------------: | :-----------: | :---------------------: | :-----------------------------------------------: | :-----------------------------------: | :-----------------------------------------------: |  :--------: | :----------: | :------------------------------------------------: | :------------------: | :-----: |
-|  count |	     250      |	             250            |	      250        |	       250          |	     250      |	          245           |	                       250                        |	                  250                 |	                     250                          |	    249     |	     249     |	                     250                          |	         248         |	 250   |
-| unique |	     250      |	             248            |	       45        |	        21          |	      38      |	            4           |	                       250                        |	                  205                 |	                     250                          |	    184     |	     182     |	                     249                          |	         171         |	 250   |
-|   top	 | Move to Heaven |	May 22, 2017 - Jul 11, 2017 |	      tvN        |  Wednesday, Thursday	| 1 hr. 10 min. |	15+ - Teens 15 or older	| Geu Roo is a young autistic man. He works for ... |	Psychological, Comedy, Romance, Drama	| Autism, Uncle-Nephew Relationship, Death, Sava... |	Kim Won Suk	|  Kim Eun Hee | Jo Jung Suk, Yoo Yeon Seok, Jung Kyung Ho, Kim...	|   Chorokbaem Media   |	 #1    |
-|  freq  |	      1       |	              2             |	       49        |          40          |	      56      |	          216           |	                        1                         |	                   4                  |	                      1                           |	     5	    |       6      |	                      2                           |	          7          |	  1    |
+|        |        Name	    |           Aired Date        | Original Network |	     Aired On	      |    Duration   |      Content Rating      |	                     Synopsis                 |	                 Genre                |	                     Tags                         |	 Director   |	Screenwriter |	                     Cast                         | Production companies |	 Rank  |
+|  :---: |    :----------:   |  :------------------------: | :--------------: | :------------------: | :-----------: | :---------------------:  | :-----------------------------------------------: |  :-----------------------------------:  | :-----------------------------------------------: |    :--------:  |  :----------: | :-----------------------------------------------: | :------------------: | :-----:|
+|  count |	    250       |	         250            |	  250        |	        250          |	    250     |	         245            |	                       250                    |	                  250                 |	                     250                          |	   249      |	    249      |	                     250                          |	      248         |	  250  |
+| unique |	    250       |	         248            |	   45        |	         21          |	     38     |	          4             |	                       250                    |	                  205                 |	                     250                          |	   184      |	    182      |	                     249                          |	      171         |	  250  |
+|   top  |   Move to Heaven  | May 22, 2017 - Jul 11, 2017 |	  tvN        |  Wednesday, Thursday | 1 hr. 10 min. |	15+ - Teens 15 or older | Geu Roo is a young autistic man. He works for ... |	Psychological, Comedy, Romance, Drama | Autism, Uncle-Nephew Relationship, Death, Sava... |  Kim Won Suk   |  Kim Eun Hee  | Jo Jung Suk, Yoo Yeon Seok, Jung Kyung Ho, Kim...	|   Chorokbaem Media   |	  #1   |
+|  freq  |	     1        |	          2             |	   49        |          40          |	     56     |	         216            |	                        1                     |	                   4                  |	                      1                           |	    5	  |       6       |	                      2                           |	       7          |	   1   |
      
 ## b. EDA : Univariate Analysis
 
 Pada tahap ini, dilakukan analisis terhadap distribusi dan karakteristik masing-masing fitur dalam dataset.
 
+### Data Numerikal
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8bf507e6-c818-4a31-975f-774d3581d60c" alt="Gambar 1" width="500"/>
+  <img src="https://github.com/user-attachments/assets/89444593-b044-4562-ac68-d22dd097c092" alt="Gambar 1" width="500"/>
   <br/>
-  <b>Gambar 1. Banyak Total Episode yang Digunakan K-Drama Favorit</b>
+  <b>Gambar 1. Total Episode yang Ditayangkan K-Drama Favorit</b>
 </p>
-Distribusi jumlah episode per K-Drama menunjukkan bahwa jumlah episode paling umum adalah sekitar 12 hingga 20 episode, dengan 16 episode menjadi yang paling sering muncul.
+Distribusi jumlah episode per K-Drama menunjukkan bahwa jumlah episode paling umum adalah sekitar 12 hingga 20 episode, dengan 16 episode menjadi yang paling sering muncul. 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/d8391f1b-6751-4999-ba68-7392f359351d" alt="Gambar 1" width="500"/>
+  <img src="https://github.com/user-attachments/assets/d8391f1b-6751-4999-ba68-7392f359351d" alt="Gambar 2" width="500"/>
   <br/>
   <b>Gambar 2. Distribusi Rating K-Drama Favorit</b>
 </p>
 Histogram rating menunjukkan bahwa distribusi rating cenderung terkonsentrasi pada nilai yang tinggi, dengan sebagian besar K-Drama memiliki rating di atas 8.5, menunjukkan kualitas tinggi dari K-Drama dalam dataset ini.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d8c13904-5f2d-4dff-aabf-6d9fe2aa4ec8" alt="Gambar 3" width="500"/>
+  <br/>
+  <b>Gambar 3. Tren Jumlah K-Drama yang Rilis per Tahun</b>
+</p>
+Menunjukkan tren rilis K-Drama dalam "Top 250" dari tahun ke tahun. Kenaikan dalam beberapa tahun terakhir dapat mengindikasikan pertumbuhan industri atau preferensi penonton pada rilis terbaru.
+
+### Data Kategorikal
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9eb402cb-bb08-4b35-962f-8759480bf6fa" alt="Gambar 4" width="500"/>
+  <br/>
+  <b>Gambar 4. Genre K-Drama yang Paling Populer</b>
+</p>
+Romance, Drama, Mystery, Comedy, dan Thriller adalah genre yang mendominasi, menunjukkan bahwa K-Drama dalam daftar top ini cenderung memiliki genre-genre tersebut. 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ae6c8f96-0911-4cdd-b614-ffaf81101709" alt="Gambar 5" width="500"/>
+  <br/>
+  <b>Gambar 5. Top 10 Network Penyedia K-Drama Terbanyak</b>
+</p>
+Visualisasi ini mengidentifikasi 10 jaringan televisi yang paling banyak menayangkan K-Drama dalam dataset. Terlihat bahwa jaringan seperti tvN, Netflix, dan SBS adalah kontributor utama K-Drama top, menunjukkan peran penting mereka dalam industri.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3947ed48-e3cb-428f-afde-845d6c7f71c9" alt="Gambar 6" width="500"/>
+  <br/>
+  <b>Gambar 6. Top 10 Tag yang Paling Sering Muncul di K-Drama</b>
+</p>
+Plot ini menampilkan 10 tag yang paling sering diasosiasikan dengan K-Drama. Tag-tag ini merepresentasikan tema, suasana, atau konsep yang paling umum ditemukan dalam K-Drama, seperti Strong Female Lead, Smart Female Lead, Smart Male Lead, dll. Hal ini membantu memahami karakteristik umum Top 250 K-Drama.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3456a3b8-7e5d-467b-8a20-3ff44eba48d9" alt="Gambar 7" width="500"/>
+  <br/>
+  <b>Gambar 7. K-Drama Berdasarkan Rating Usia Penonton</b>
+</p>
+Plot ini menunjukkan distribusi K-Drama berdasarkan rating usia penonton. Terlihat bahwa kategori 15+ adalah rating yang paling umum, mengindikasikan bahwa sebagian besar K-Drama dalam dataset ini ditujukan untuk audiens berusia 15 tahun ke atas.
 
 ## Data Preparation
-Tahap ini mempersiapkan data K-Drama untuk pembangunan model Content-Based Filtering. Proses ini meliputi langkah-langkah sebagai berikut:
+Tahap Data Preparation merupakan fondasi penting untuk memastikan data siap digunakan dalam pembangunan model rekomendasi. Pada tahap ini, dilakukan serangkaian proses pembersihan, transformasi, dan pemilihan fitur. Langkah-langkah yang dilakukan adalah sebagai berikut:
 
-1.  **Membersihkan Kolom 'Rank'**: Menghilangkan karakter '#' pada kolom 'Rank' dan mengubah tipe data kolom tersebut menjadi integer.
-2.  **Menangani Missing Value**: Menghapus baris yang mengandung nilai-nilai yang hilang pada dataset.
-3.  **Memilih Fitur yang Relevan**: Memilih kolom-kolom yang relevan dengan konten K-Drama yang akan digunakan untuk rekomendasi. Kolom-kolom yang dipilih meliputi 'Name', 'Original Network', 'Synopsis', 'Genre', 'Tags', 'Director', dan 'Cast'.
-4.  **Mengganti Missing Value pada Fitur Terpilih**: Mengganti nilai-nilai yang hilang pada fitur-fitur terpilih dengan string kosong (''). Ini dilakukan untuk memastikan bahwa semua fitur yang akan digabungkan memiliki nilai string dan tidak menyebabkan error saat pemrosesan teks.
-5.  **Menggabungkan Fitur Terpilih**: Menggabungkan konten dari semua fitur terpilih menjadi satu string tunggal untuk setiap K-Drama. String gabungan ini akan menjadi representasi teks dari setiap K-Drama yang akan digunakan untuk perhitungan kemiripan.
+1.  **Pembersihan Kolom 'Rank':** Karakter `#` di kolom `Rank` dihilangkan, dan tipe data kolom tersebut diubah menjadi integer. Ini dilakukan untuk memastikan kolom peringkat memiliki format numerik yang konsisten.
+2.  **Penanganan Missing Value:** Baris-baris data yang mengandung nilai yang hilang (missing value) dihapus dari dataset. Langkah ini penting untuk menghindari masalah atau bias yang mungkin timbul akibat data yang tidak lengkap.
+3.  **Pemilihan Fitur:** Dari keseluruhan dataset, hanya kolom `Name`, `Year of release`, dan `Genre` yang dipilih untuk digunakan dalam proses pemodelan. Pemilihan ini didasarkan pada pendekatan rekomendasi berbasis konten yang berfokus pada informasi genre.
+4.  **Pembersihan Data Genre:** Karakter strip (`-`) di dalam entri kolom `Genre` dihapus. Hal ini bertujuan untuk menyeragamkan format penulisan genre dan memastikan bahwa setiap genre dikenali dengan benar sebagai entitas terpisah.
+5.  **Vektorisasi Genre dengan CountVectorizer:** Kolom `Genre` yang bersifat teks diubah menjadi representasi numerik menggunakan **CountVectorizer** dari library scikit-learn.
+    *   CountVectorizer menghitung frekuensi kemunculan setiap genre unik di seluruh dataset.
+    *   Proses ini menghasilkan matriks di mana baris merepresentasikan K-Drama, kolom merepresentasikan genre unik, dan nilainya adalah jumlah kemunculan genre tersebut dalam K-Drama.
+    *   Metode `fit_transform()` digunakan untuk mempelajari kosa kata genre dan sekaligus mengubah data menjadi matriks hitungan.
+    *   Metode `todense()` digunakan untuk mengonversi matriks hasil menjadi format dense (padat) untuk kemudahan manipulasi atau visualisasi.
 
+Hasil dari tahapan Data Preparation adalah dataset yang lebih bersih, terfokus pada fitur relevan (terutama genre), dan siap untuk digunakan dalam membangun dan mengevaluasi model rekomendasi berbasis kesamaan konten.
+
+
+## 3. Modelling
+
+Pada tahap Modelling, fokus utama adalah membangun arsitektur sistem rekomendasi yang dapat menyarankan K-Drama baru berdasarkan preferensi pengguna. Mengingat problem statement yang berfokus pada rekomendasi berbasis konten menggunakan fitur genre, pendekatan yang dipilih adalah **Content-Based Filtering**.
+
+Teknik utama yang digunakan adalah menghitung **kemiripan antar item (K-Drama) berdasarkan representasi numerik dari genre**. Langkah-langkahnya adalah sebagai berikut:
+
+1.  **Representasi Genre dengan CountVectorizer:** <br>
+    Seperti yang telah dibahas pada tahap Data Preparation, kolom 'Genre' diubah menjadi matriks hitungan menggunakan `CountVectorizer`. Setiap K-Drama direpresentasikan sebagai vektor yang menunjukkan frekuensi kemunculan setiap genre unik.
+
+2.  **Perhitungan Kemiripan dengan Cosine Similarity:** <br>
+    Untuk mengukur seberapa mirip setiap pasangan K-Drama berdasarkan vektor genrenya, digunakan metrik **Cosine Similarity**.
+    *   **Formula Cosine Similarity:** Cosine Similarity antara dua vektor A dan B dihitung sebagai berikut:
+        ![formula cosine similarity](https://github.com/user-attachments/assets/f5a4b698-92cf-42e8-be59-34f95e07e1ae)
+    *   **Cara Kerja Metrik:** Metrik ini mengukur kosinus dari sudut antara dua vektor. Nilai yang mendekati 1 menunjukkan sudut kecil (vektor sangat mirip arahnya, yang berarti genre-nya serupa), sedangkan nilai yang mendekati 0 menunjukkan sudut mendekati 90 derajat (tidak ada kemiripan genre). <br>
+
+Tabel 3. Nilai *Cosine Similarity* antar 5 Judul K-Drama
+
+| Name                          | Thriller, Mystery, Psychological | Thriller, Mystery, Drama, Political | Comedy, Romance, Youth, Sports | Historical, Romance, Supernatural, Political | Action, Thriller, Drama, Fantasy | Thriller, Mystery, Drama, Melodrama  | Mystery, Comedy, Law, Romance | Thriller, Comedy, Law, Romance | Action, Thriller, Mystery, Drama  | Romance, Life, Drama, Fantasy|
+| :--------------------------:  | :------------------------------: | :---------------------------------: | :----------------------------: | :------------------------------------------: | :------------------------------: | :----------------------------------: | :---------------------------: | :----------------------------: | :-------------------------------: | :--------------------------: |
+| **Hospital Playlist**         | 0.000000                         | 0.000000                            | 0.250000                       | 0.250000                                     | 0.000000                         | 0.000000                             | 0.250000                      | 0.250000                       | 0.000000                          | 0.500000                     |
+| **Kairos**                    | 0.288675                         | 0.500000                            | 0.000000                       | 0.000000                                     | 0.750000                         | 0.500000                             | 0.000000                      | 0.250000                       | 0.750000                          | 0.250000                     |
+| **Age of Youth 2**            | 0.288675                         | 0.250000                            | 0.500000                       | 0.250000                                     | 0.000000                         | 0.250000                             | 0.750000                      | 0.500000                       | 0.250000                          | 0.500000                     |
+| **Strong Woman Do Bong Soon** | 0.235702                         | 0.408248                            | 0.408248                       | 0.408248                                     | 0.612372                         | 0.408248                             | 0.408248                      | 0.612372                       | 0.612372                          | 0.408248                     |
+| **Hello Monster**             | 0.866025                         | 0.750000                            | 0.000000                       | 0.000000                                     | 0.500000                         | 0.750000                             | 0.250000                      | 0.250000                       | 0.750000                          | 0.250000                     |
+
+3.  **Pembuatan Fungsi Rekomendasi (Top-N Recommendation):** <br>
+    Sebuah fungsi `get_recommendations` dirancang untuk memberikan rekomendasi **Top-N**, di mana N dalam kasus ini adalah 10.
+    *   Fungsi ini mengambil judul K-Drama yang disukai pengguna sebagai input.
+    *   Berdasarkan matriks Cosine Similarity, fungsi menemukan 10 K-Drama lain yang memiliki skor kemiripan genre tertinggi dengan K-Drama input.
+    *   Output dari fungsi ini adalah daftar **Top 10 rekomendasi K-Drama**, termasuk nama, tahun rilis, dan genre dari K-Drama yang direkomendasikan.
+
+**Kelebihan Pendekatan Content-Based Filtering (dengan CountVectorizer & Cosine Similarity):**
+
+*   **Tidak Membutuhkan Data Pengguna Lain:** Model hanya bergantung pada informasi konten (genre) dari item itu sendiri, sehingga bisa langsung memberikan rekomendasi bahkan untuk item baru atau pengguna baru (cold-start problem untuk item).
+*   **Dapat Menjelaskan Rekomendasi:** Mudah untuk menjelaskan mengapa suatu item direkomendasikan (karena kemiripan genre).
+*   **Menangkap Preferensi Spesifik Pengguna:** Jika sistem diperluas untuk pengguna individu, model dapat menyesuaikan rekomendasi berdasarkan riwayat interaksi pengguna dengan konten tertentu.
+
+**Kekurangan Pendekatan Content-Based Filtering:**
+
+*   **Keterbatasan pada Konten yang Disediakan:** Model hanya bisa merekomendasikan item yang mirip dengan item yang sudah disukai. Sulit untuk merekomendasikan item di luar "gelembung" konten yang familiar.
+*   **Masalah Overspecialization:** Pengguna mungkin hanya akan direkomendasikan item yang sangat mirip, membatasi penemuan konten baru atau beragam.
+*   **Membutuhkan Data Konten Terperinci:** Kualitas rekomendasi sangat bergantung pada kekayaan dan struktur data konten (dalam kasus ini, genre).
+
+Dalam proyek ini, dipilih satu solusi rekomendasi berbasis Content-Based Filtering karena dataset yang tersedia sangat kaya akan informasi konten (terutama genre) dan tidak menyediakan data interaksi pengguna (seperti rating dari banyak pengguna) yang diperlukan untuk Collaborative Filtering.
+
+## 4. Evaluation
+
+Tahap Evaluation dilakukan untuk mengukur efektivitas sistem rekomendasi dalam memberikan rekomendasi yang relevan berdasarkan kemiripan genre.
+
+**Metrik Evaluasi:**
+
+Metrik evaluasi yang digunakan dalam konteks ini adalah **Precision**.
+
+*   **Formula Precision:** Precision dihitung sebagai:
+    $$ \text{Precision} = \frac{\text{Jumlah Rekomendasi yang Relevan}}{\text{Total Jumlah Rekomendasi}} = \frac{\text{TP}}{\text{TP + FP}} $$
+    Di mana:
+    *   **TP (True Positives):** Jumlah item yang direkomendasikan dan sebenarnya relevan (dalam konteks ini, memiliki genre yang sangat mirip dengan K-Drama input).
+    *   **FP (False Positives):** Jumlah item yang direkomendasikan tetapi sebenarnya tidak relevan.
+
+*   **Cara Kerja Metrik:** Precision mengukur **proporsi item yang relevan di antara semua item yang direkomendasikan**. Nilai Precision yang tinggi (mendekati 1.0) berarti bahwa mayoritas rekomendasi yang diberikan benar-benar relevan.
+
+**Hasil Proyek Berdasarkan Metrik Evaluasi:**
+
+Model rekomendasi diuji dengan memberikan input K-Drama "Hospital Playlist". Sistem memberikan daftar **Top 10 rekomendasi**. Berdasarkan analisis kualitatif terhadap genre dari 10 K-Drama yang direkomendasikan, diasumsikan bahwa semua rekomendasi tersebut memiliki kemiripan genre yang tinggi dengan "Hospital Playlist".
+
+Dengan asumsi ini (TP = 10, FP = 0 untuk 10 rekomendasi teratas), perhitungan Precision adalah:
+$$ \text{Precision} = \frac{10}{10 + 0} = 1.0 $$
+$$ \text{Precision} = 100\% $$
+
+**Kesimpulan Hasil Evaluasi:**
+
+Hasil perhitungan Precision sebesar 100% menunjukkan bahwa, **berdasarkan asumsi evaluasi bahwa rekomendasi dengan genre yang mirip dianggap relevan**, model ini sangat efektif dalam menghasilkan daftar 10 K-Drama teratas yang memiliki kesamaan genre dengan K-Drama input. Ini mengindikasikan bahwa pendekatan Content-Based Filtering berbasis CountVectorizer dan Cosine Similarity bekerja dengan baik dalam menangkap dan memanfaatkan informasi genre untuk rekomendasi.
+
+Penting untuk diingat bahwa evaluasi ini menggunakan asumsi sederhana tentang relevansi berdasarkan genre. Evaluasi yang lebih robust mungkin melibatkan perbandingan dengan penilaian manual atau data preferensi pengguna yang sebenarnya jika tersedia.
